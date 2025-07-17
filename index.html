@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="src/styles/main.css">
     <link rel="stylesheet" href="src/styles/buttons.css">
     <link rel="stylesheet" href="src/styles/containers_and_frames.css">
+    <!-- link  favicon -->
+     <link rel="shortcut icon" href="src/assets/favicon/Favicon.ico" type="image/x-icon">
     <!-- link font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +19,8 @@
     <title>YuGiOh JoKenPo Edition</title>
 </head>
 <body>
+    <!-- background audio -->
+    <audio id = "bgm" src="src/assets/audios/fundo.mp3" type = "audio/mp3"></audio>
     <!-- Video Background -->
     <div class="bg-video">
         <video class="video" autoplay muted loop>
@@ -53,7 +57,9 @@
                         <div class="card-infield">
                             <img id="player-field-card" height="180px" width="125px">
                         </div>
-                        <img height="100px" src="src/assets/icons/millenium2.png">   
+                        <div class="centro">
+                            <img height="100px" src="src/assets/icons/millenium2.png">
+                        </div> 
                         <div class="card-infield">
                             <img id="computer-field-card" height="180px" width="125px">
                         </div>
@@ -63,7 +69,8 @@
                             id="next-duel"
                             class="rpgui-button"
                             onclick="resetDuel()"
-                            >GANHOU</button>
+                            >GANHOU 
+                    </button>
                     </div>    
                 </div>
                 <!-- cartas jogador -->

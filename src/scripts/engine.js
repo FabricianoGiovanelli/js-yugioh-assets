@@ -121,7 +121,7 @@ async function checkDuelResults(playerCardId, ComputerCardId){
         state.score.computerScore++;
     }
     if (playerCard.DrawOf.includes(ComputerCardId)){
-        duelResults = "Draw";
+        duelResults = "We  Draw";
         playAudio("draw")
         state.score.draws++;
     }
@@ -156,6 +156,8 @@ async function resetDuel(){
     state.actions.button.style.display = "none";
     state.fieldCards.player.style.display = "none";
     state.fieldCards.computer.style.display = "none"
+    state.cardSprites.name.innerText = "Escolha uma nova carta";
+    state.cardSprites.type.innerText = "Vamos duelar";
 
     init();
 
@@ -166,24 +168,13 @@ async function playAudio(status){
     audio.play();
 }
 
-
-async function fundo() {
-    const audio = new Audio("src/assets/audios/fundo.mp3");
-    audio.loop = true; // Faz o áudio tocar em loop
-    audio.volume = 0.2; // Volume entre 0 e 1
-    await audio.play().catch((e) => {
-        console.warn("Autoplay bloqueado pelo navegador:", e);
-    });
-}
-
-
 function init() {
     drawCards(5, state.playerSides.player1);
     drawCards(5, state.playerSides.computer);
     playAudio("inicio")
+    const bgm = document.getElementById("bgm");
+    bgm.play();
 }
-
-fundo();
 
 init();
 
