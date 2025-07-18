@@ -3,7 +3,9 @@ const state = {
         playerScore: 0,
         computerScore: 0,
         draws: 0,
-        scoreBox: document.getElementById("score_points")  
+        winBox: document.getElementById("win"),  
+        loseBox: document.getElementById("lose"),  
+        drawBox: document.getElementById("draw"), 
     },
     cardSprites:{
         avatar: document.getElementById("card-image"),
@@ -100,10 +102,9 @@ async function drawButton(text) {
 }
 
 async function updateScore() {
-    state.score.scoreBox.innerText =
-    `Win: ${state.score.playerScore} |
-    Lose: ${state.score.computerScore} |
-    Draw: ${state.score.draws}`
+    state.score.winBox.innerText = `Win: ${state.score.playerScore}`;
+    state.score.loseBox.innerText = `Lose: ${state.score.computerScore}`;
+    state.score.drawBox.innerText = `Draw: ${state.score.draws}`;    
 }
 
 async function checkDuelResults(playerCardId, ComputerCardId){
